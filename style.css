@@ -37,10 +37,10 @@ body {
 
 
 #gifDiv {
-    float: left;
+    /* float: left;
     width: auto;
-    height: 0px;
-    margin-bottom: 30%;
+    height: 0px; */
+    /* margin-bottom: 30%; */
     padding-right: 5px;
     padding-bottom: 5px;
 }

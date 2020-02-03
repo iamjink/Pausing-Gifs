@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     //buttons appear on page load
     function showButtons() {
+        $("#buttonsList").empty();
         for (var i = 0; i < scienceArr.length; i++) {
             var button = $("<button>");
             button.attr("data-science", scienceArr[i]);
@@ -13,6 +14,28 @@ $(document).ready(function () {
         };
     };
 
+    //user input button addition function
+    function userInputButton() {
+        $("#submit").on("click", function () {
+            var scienceKeyword = $("#addition").val().trim();
+
+            if (scienceKeyword == "") {
+                return false;
+            };
+
+            scienceArr.push(scienceKeyword);
+            showButtons();
+            //improvement to make: have gifs show up according to keyword
+            showGifs(scienceKeyword);
+            $("#gifsList").empty();
+            return false;
+
+
+
+
+        });
+    }
+
     //showGifts on button click
     function showGifs() {
         $("button").on("click", function () {
@@ -20,8 +43,8 @@ $(document).ready(function () {
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
                 science + "&api_key=chDuK3TIQSCJCXwnaOChRtivwgMr2alW&limit=10";
             console.log(queryURL);
-
             $("#gifsList").empty();
+
 
             $.ajax({
                 url: queryURL,
@@ -34,6 +57,7 @@ $(document).ready(function () {
                 var results = response.data;
 
                 for (var i = 0; i < results.length; i++) {
+
                     var gifDiv = $("<div>");
 
                     var rating = results[i].rating;
@@ -44,9 +68,9 @@ $(document).ready(function () {
                     scienceImage.attr("src", results[i].images.fixed_height_still.url);
                     scienceImage.attr("data-still", results[i].images.fixed_height_still.url);
                     scienceImage.attr("data-animate", results[i].images.fixed_height.url);
-                    gifDiv.attr("data-state", "still");
-                    gifDiv.attr("id", "gifDiv");
-                    gifDiv.addClass("gifImage");
+                    scienceImage.attr("data-state", "still");
+                    scienceImage.attr("id", "gifDiv");
+                    scienceImage.addClass("gifImage");
                     gifDiv.prepend(p);
                     gifDiv.prepend(scienceImage);
                     $("#gifsList").prepend(gifDiv);
@@ -59,21 +83,13 @@ $(document).ready(function () {
         });
     }
 
-    //user input button addition function
-    function userInputButton() {
-        $("#submit-bid").on("click", function () {
-            var scienceKeyword = $("#addition").val().trim();
-            if (scienceKeyword == "") {
-                return false;
-            };
+    //run functions
+    showButtons();
+    userInputButton();
+    showGifs();
 
-            scienceArr.push(scienceKeyword);
 
-        });
-    }
-
-    //animate gif on click function
-
+    // $(document).on("click", "#buttons", showGifs);
     $(document).on("click", ".gifImage", function () {
         var state = $(this).attr("data-state");
         var urlName = $(this).attr("src");
@@ -94,9 +110,5 @@ $(document).ready(function () {
 
         }
     });
-
-    showButtons();
-    showGifs();
-    userInputButton();
 
 });

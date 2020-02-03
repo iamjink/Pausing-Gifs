@@ -9,8 +9,62 @@
     <!-- css -->
     <link rel="stylesheet" href="style.css">
 
+    <title>Pausing Gifs</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="leftPanel"></div>
+
+        <div class="row">
+            <div class="col-3">
+                <!-- user input with submit button -->
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row">
+                            <label id="formTitle" for="bidder-price">Add a science tag</label>
+                            <input class="form-control" id="addition" type="string">
+                        </div>
+                        <button class="btn btn-primary" id="submit-bid" type="submit">Submit</button>
+                    </form>
+                </div>
+
+                <!-- buttons show up here -->
+                <div id="buttonsList">
+                    <!-- <button data-science="asteroids">Bill NYE</button>-->
+
+                </div>
+            </div>
+
+
+            <!-- gifs show up here -->
+            <div class="col-9">
+                <div id="gifsList">
+
+                    <div id="gifDiv">
+                        <!-- <img src="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif"
+                            data-still="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif"
+                            data-animate="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still"
+                            class="gif"> -->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id='footer'></div>
+
+
+    <!-- scripts -->
+
     <!-- jQuery link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- javascript link -->
+    <script type="text/javascript" src="app.js"></script>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -22,53 +76,6 @@
 
 
 
-
-    <title>Pausing Gifs</title>
-</head>
-
-<body>
-
-    <!-- buttons show up here -->
-    <div class="container">
-
-        <div id="buttonsList">
-            <button></button>
-        </div>
-
-    </div>
-
-    <!-- gifs show up here -->
-    <div class="container">
-        <div id="gifsList">
-        </div>
-    </div>
-
-
-    <!-- user input with submit button -->
-    <div class="card-body">
-        <form>
-            <div class="form-group row">
-                <label for="bidder-price">Add an</label>
-                <input class="form-control" id="addition" type="string">
-            </div>
-            <button class="btn btn-primary" id="submit-bid" type="submit">Submit</button>
-        </form>
-    </div>
-
-
-    <!-- javascript link -->
-    <script type="text/javascript" src="app.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
 
 </body>
 

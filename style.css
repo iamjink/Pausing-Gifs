@@ -1,0 +1,25 @@
+
+
+body {
+    padding-top: 20px
+};
+
+#gifslist.img {
+    padding-bottom: 10px;
+}
+
+.col-3 {
+    background-color: black;
+}
+.col-9{
+    background-color: white;
+}
+
+#formTitle {
+    color: honeydew;
+}
+
+#submit-bid {
+    background-color: honeydew;
+    color: indigo;
+}

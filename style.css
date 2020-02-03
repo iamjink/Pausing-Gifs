@@ -1,8 +1,8 @@
-
-
 body {
     padding-top: 20px
-};
+}
+
+
 
 #gifslist.img {
     padding-bottom: 10px;
@@ -11,7 +11,8 @@ body {
 .col-3 {
     background-color: black;
 }
-.col-9{
+
+.col-9 {
     background-color: white;
 }
 
@@ -22,4 +23,30 @@ body {
 #submit-bid {
     background-color: honeydew;
     color: indigo;
+}
+
+#buttons {
+    padding-bottom: 10px;
+    background-color: red;
+    border: none;
+    float: left;
+    color: white;
+    padding-bottom: 10px;
+  
+}
+
+
+#gifDiv {
+    float: left;
+    width: auto;
+    height: 0px;
+    margin-bottom: 30%;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+
+#formText {
+    color: honeydew;
+
 }

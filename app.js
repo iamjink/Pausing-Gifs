@@ -7,6 +7,7 @@ $(document).ready(function () {
         for (var i = 0; i < scienceArr.length; i++) {
             var button = $("<button>");
             button.attr("data-science", scienceArr[i]);
+            button.attr("id", "buttons");
             button.text(scienceArr[i]);
             $("#buttonsList").append(button);
         };
@@ -40,12 +41,17 @@ $(document).ready(function () {
                     var p = $("<p>").text("Rating: " + rating);
 
                     var scienceImage = $("<img>");
-                    scienceImage.attr("src", results[i].images.fixed_height.url);
-
+                    scienceImage.attr("src", results[i].images.fixed_height_still.url);
+                    scienceImage.attr("data-still", results[i].images.fixed_height_still.url);
+                    scienceImage.attr("data-animate", results[i].images.fixed_height.url);
+                    gifDiv.attr("data-state", "still");
+                    gifDiv.attr("id", "gifDiv");
+                    gifDiv.addClass("gifImage");
                     gifDiv.prepend(p);
                     gifDiv.prepend(scienceImage);
-
                     $("#gifsList").prepend(gifDiv);
+
+
                 }
 
 
@@ -53,8 +59,44 @@ $(document).ready(function () {
         });
     }
 
+    //user input button addition function
+    function userInputButton() {
+        $("#submit-bid").on("click", function () {
+            var scienceKeyword = $("#addition").val().trim();
+            if (scienceKeyword == "") {
+                return false;
+            };
+
+            scienceArr.push(scienceKeyword);
+
+        });
+    }
+
+    //animate gif on click function
+
+    $(document).on("click", ".gifImage", function () {
+        var state = $(this).attr("data-state");
+        var urlName = $(this).attr("src");
+
+
+        console.log(state);
+        console.log(urlName);
+
+        if (state === "still") {
+            $(this).attr("src", $(this).data("animate"));
+            $(this).attr("data-state", "animate");
+            console.log(urlName);
+
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+            console.log(urlName);
+
+        }
+    });
+
     showButtons();
     showGifs();
-
+    userInputButton();
 
 });

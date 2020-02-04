@@ -9,54 +9,59 @@
     <!-- css -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- google fonts link -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700&display=swap" rel="stylesheet">
+
     <title>Pausing Gifs</title>
 </head>
 
 <body>
-    <div class="container">
-        <div id="leftPanel"></div>
+    <div id="main">
+        <div class="container">
+            <div id="wrapper">
+                <div class="row">
+                    <div class="col-3">
+                        <!-- user input with submit button -->
+                        <div class="card-body">
+                            <form>
 
-        <div class="row">
-            <div class="col-3">
-                <!-- user input with submit button -->
-                <div class="card-body">
-                    <form>
-                       
-                        <div class="form-group row">
-                             <p id="formText">Gif submission</p>
-                            <label id="formTitle" for="bidder-price">Add science keyword below</label>
-                            <input class="form-control" id="addition" type="string">
+                                <div class="form-group row">
+                                    <p id="formText">GIF SUBMISSION</p>
+                                    <label id="formTitle" for="bidder-price">ADD SCIENCE KEYWORD BELOW</label>
+                                    <input class="form-control" id="addition" type="string">
+                                </div>
+                                <button class="btn btn-primary" id="submit" type="submit">Add new giphy!</button>
+                            </form>
                         </div>
-                        <button class="btn btn-primary" id="submit" type="submit">Submit</button>
-                    </form>
-                </div>
 
-                <!-- buttons show up here -->
-                <div id="buttonsList">
-                    <!-- <button data-science="asteroids">Bill NYE</button>-->
+                        <!-- buttons show up here -->
+                        <div id="buttonsList">
+                            <!-- <button data-science="asteroids">Bill NYE</button>-->
 
-                </div>
-            </div>
+                        </div>
+                    </div>
 
 
-            <!-- gifs show up here -->
-            <div class="col-9">
-                <div id="gifsList">
+                    <!-- gifs show up here -->
+                    <div class="col-9">
+                        <div id="gifsList">
 
-                    <div id="gifDiv">
-                        <!-- <img src="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif"
+                            <div id="gifDiv">
+                                <!-- <img src="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif"
                             data-still="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif"
                             data-animate="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still"
                             class="gif"> -->
+                            </div>
+
+                        </div>
+
                     </div>
-
                 </div>
-
             </div>
+
         </div>
+
     </div>
-
-
     <div id='footer'></div>
 
 

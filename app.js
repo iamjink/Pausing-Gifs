@@ -62,7 +62,7 @@ $(document).ready(function () {
 
                     var rating = results[i].rating;
 
-                    var p = $("<p>").text("Rating: " + rating);
+                    var p = $("<p>").text(" " + "RATING: " + rating + " ");
 
                     var scienceImage = $("<img>");
                     scienceImage.attr("src", results[i].images.fixed_height_still.url);
@@ -72,6 +72,7 @@ $(document).ready(function () {
                     scienceImage.attr("id", "gifDiv");
                     scienceImage.addClass("gifImage");
                     gifDiv.prepend(p);
+                    p.addClass("ratingText");
                     gifDiv.prepend(scienceImage);
                     $("#gifsList").prepend(gifDiv);
 

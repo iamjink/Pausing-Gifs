@@ -89,6 +89,14 @@ $(document).ready(function () {
     userInputButton();
     showGifs();
 
+    //grid sizer from masonry.com
+    $('.grid').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+      });
+      
+
 
     // $(document).on("click", "#buttons", showGifs);
     $(document).on("click", ".gifImage", function () {

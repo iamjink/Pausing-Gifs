@@ -89,12 +89,7 @@ $(document).ready(function () {
     userInputButton();
     showGifs();
 
-    //grid sizer from masonry.com
-    $('.grid').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true
-      });
+
       
 
 
@@ -120,4 +115,11 @@ $(document).ready(function () {
         }
     });
 
+    
+    //grid sizer from masonry.com
+    $('.grid').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+      });
 });
